@@ -35,5 +35,5 @@ kubectl apply -f 1_configmap.yaml,2_mongo-secret.yaml,3_database.yaml,4_webapp.y
 minikube dashboard -p skillfactory-tech &!
 
 #
-minikube start -p skillfactory-tech
+# minikube start -p skillfactory-tech
 ```
