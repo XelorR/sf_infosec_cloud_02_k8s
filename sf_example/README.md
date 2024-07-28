@@ -13,9 +13,6 @@
 (
   HTTP_PROXY=http://127.0.0.1:2080
 
-# making alias
-  alias kubectl="minikube kubectl --"
-
 # delete if exists
   minikube delete -p skillfactory-tech
 
@@ -37,7 +34,9 @@
 # dashboard
   minikube dashboard -p skillfactory-tech &!
 
-#
-# minikube start -p skillfactory-tech
+# making alias
+  alias kubectl="minikube kubectl --"
+  minikube config set profile skillfactory-tech
+
 )
 ```
