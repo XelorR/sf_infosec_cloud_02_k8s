@@ -10,30 +10,34 @@
 (дополняется)
 
 ```bash
+(
+  HTTP_PROXY=http://127.0.0.1:2080
+
 # making alias
-alias kubectl="minikube kubectl --"
+  alias kubectl="minikube kubectl --"
 
 # delete if exists
-minikube delete -p skillfactory-tech
+  minikube delete -p skillfactory-tech
 
 # create
-minikube config set driver virtualbox
-minikube kubectl -- get po -A
-minikube start --nodes 3 -p skillfactory-tech --driver=virtualbox
+  minikube config set driver virtualbox
+  minikube kubectl -- get po -A
+  minikube start --nodes 3 -p skillfactory-tech --driver=virtualbox
 
 # addons for dashboard
-minikube -p skillfactory-tech addons enable metrics-server
+  minikube -p skillfactory-tech addons enable metrics-server
 
 # setting default profile
-alias kubectl="minikube kubectl --"
-minikube config set profile skillfactory-tech
+  alias kubectl="minikube kubectl --"
+  minikube config set profile skillfactory-tech
 
 # deploynment
-kubectl apply -f 1_configmap.yaml,2_mongo-secret.yaml,3_database.yaml,4_webapp.yaml
+  kubectl apply -f 1_configmap.yaml,2_mongo-secret.yaml,3_database.yaml,4_webapp.yaml
 
 # dashboard
-minikube dashboard -p skillfactory-tech &!
+  minikube dashboard -p skillfactory-tech &!
 
 #
 # minikube start -p skillfactory-tech
+)
 ```
