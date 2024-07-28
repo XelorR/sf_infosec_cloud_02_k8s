@@ -35,8 +35,8 @@
   minikube dashboard -p skillfactory-tech &!
 
 # making alias
-  alias kubectl="minikube kubectl --"
   minikube config set profile skillfactory-tech
+  alias kubectl="minikube kubectl --"
 
 )
 ```
