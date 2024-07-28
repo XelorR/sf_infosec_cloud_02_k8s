@@ -10,6 +10,9 @@
 (дополняется)
 
 ```bash
+# making alias
+alias kubectl="minikube kubectl --"
+
 # delete if exists
 minikube delete -p skillfactory-tech
 
