@@ -21,10 +21,6 @@
   minikube kubectl -- get po -A
   minikube start --nodes 3 -p skillfactory-tech --driver=virtualbox
 
-# setting default profile
-  alias kubectl="minikube kubectl --"
-  minikube config set profile skillfactory-tech
-
 # deploynment
   kubectl apply -f 1_configmap.yaml,2_mongo-secret.yaml,3_database.yaml,4_webapp.yaml
 
