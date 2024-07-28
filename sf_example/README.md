@@ -7,11 +7,11 @@
 
 ## Как запустить сие
 
-(дополняется)
+(заработало)
 
 ```bash
-(
-  HTTP_PROXY=http://127.0.0.1:2080
+# (
+#   HTTP_PROXY=http://127.0.0.1:2080
 
 # delete if exists
   minikube delete -p skillfactory-tech
@@ -38,5 +38,7 @@
   minikube config set profile skillfactory-tech
   alias kubectl="minikube kubectl --"
 
-)
+# )
 ```
+
+![](./dashboard.png)
