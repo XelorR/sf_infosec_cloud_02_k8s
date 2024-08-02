@@ -20,6 +20,8 @@ minikube start --nodes 3 -p petr-webapp --driver=virtualbox
 
 # deploynment
 kubectl apply -f configmap.yaml,secret.yaml,db.yaml,web.yaml
+# or:
+# minikube cache add <local image name>
 
 # addons for dashboard
 minikube -p petr-webapp addons enable metrics-server
