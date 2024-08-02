@@ -10,31 +10,29 @@
 (заработало)
 
 ```bash
-# (
-#   HTTP_PROXY=http://127.0.0.1:2080
-
 # delete if exists
-  minikube delete -p skillfactory-tech
+minikube delete -p skillfactory-tech
 
 # create
-  minikube config set driver virtualbox
-  minikube kubectl -- get po -A
-  minikube start --nodes 3 -p skillfactory-tech --driver=virtualbox
+minikube config set driver virtualbox
+minikube kubectl -- get po -A
+minikube start --nodes 3 -p skillfactory-tech --driver=virtualbox
 
 # deploynment
-  kubectl apply -f 1_configmap.yaml,2_mongo-secret.yaml,3_database.yaml,4_webapp.yaml
+kubectl apply -f 1_configmap.yaml,2_mongo-secret.yaml,3_database.yaml,4_webapp.yaml
 
 # addons for dashboard
-  minikube -p skillfactory-tech addons enable metrics-server
+minikube -p skillfactory-tech addons enable metrics-server
 
 # dashboard
-  minikube dashboard -p skillfactory-tech &!
+minikube dashboard -p skillfactory-tech &!
 
 # making alias
-  minikube config set profile skillfactory-tech
-  alias kubectl="minikube kubectl --"
+minikube config set profile skillfactory-tech
+alias kubectl="minikube kubectl --"
 
-# )
+# exposing service
+kubectl expose deployment/skillfactory-tech-m02 --type="NodePort" --port 8080 --cluster skillfactory-tech
 ```
 
 ![](./dashboard.png)
