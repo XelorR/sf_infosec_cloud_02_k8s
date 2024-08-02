@@ -18,8 +18,8 @@ minikube config set driver virtualbox
 minikube kubectl -- get po -A
 minikube start --nodes 3 -p petr-webapp --driver=virtualbox
 
-# building
-# docker build -t webapp ./dockerfiles/webapp.docker
+# building and pushing to dockerhub
+docker build -t php-apache-mysqli -f ./dockerfiles/webapp.docker .
 
 # deploynment
 kubectl apply -f configmap.yaml,secret.yaml,db.yaml,web.yaml

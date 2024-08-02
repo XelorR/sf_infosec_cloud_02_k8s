@@ -1,7 +1,4 @@
 FROM php:7.4-apache
 
-# Copy local src directory to container /var/www/html
-COPY ./src /var/www/html
-
 # Install MySQLi extension for PHP
 RUN docker-php-ext-install mysqli
