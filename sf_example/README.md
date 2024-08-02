@@ -19,6 +19,7 @@ minikube kubectl -- get po -A
 minikube start --nodes 3 -p skillfactory-tech --driver=virtualbox
 
 # deploynment
+minikube config set profile skillfactory-tech
 alias kubectl="minikube kubectl --"
 kubectl apply -f 1_configmap.yaml,2_mongo-secret.yaml,3_database.yaml,4_webapp.yaml
 
@@ -27,9 +28,6 @@ minikube -p skillfactory-tech addons enable metrics-server
 
 # dashboard
 minikube dashboard -p skillfactory-tech &!
-
-# making alias
-minikube config set profile skillfactory-tech
 
 # exposing service
 kubectl expose deployment/skillfactory-tech-m02 --type="NodePort" --port 8080 --cluster skillfactory-tech
