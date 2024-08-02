@@ -24,11 +24,12 @@ docker push xelorr/php-apache-mysql
 minikube delete -p petr-webapp
 
 # create
-minikube config set driver virtualbox
+minikube config set driver docker
 minikube kubectl -- get po -A
-minikube start --nodes 3 -p petr-webapp --driver=virtualbox
+minikube start --nodes 3 -p petr-webapp --driver=docker
 
 # deploynment
+alias kubectl="minikube kubectl --"
 kubectl apply -f configmap.yaml,secret.yaml,db.yaml,web.yaml
 # or:
 # minikube cache add <local image name>
@@ -43,9 +44,8 @@ minikube dashboard -p petr-webapp &!
 ### Launch webapp
 
 ```bash
-# setting default profile & making alias
+# setting default profile
 minikube config set profile petr-webapp
-alias kubectl="minikube kubectl --"
 
 # exposing service
 # kubectl expose deployment/<deployment name> --type="NodePort" --port 8080 --cluster <cluster name>
