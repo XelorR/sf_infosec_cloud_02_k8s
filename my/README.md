@@ -30,4 +30,8 @@ minikube dashboard -p petr-webapp &!
 # setting default profile & making alias
 minikube config set profile petr-webapp
 alias kubectl="minikube kubectl --"
+
+# exposing service
+# kubectl expose deployment/<deployment name> --type="NodePort" --port 8080 --cluster <cluster name>
+kubectl expose deployment/petr-webapp-02 --type="NodePort" --port 8080 --cluster petr-webapp
 ```
