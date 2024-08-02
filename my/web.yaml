@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: php:7.4-apache
+        image: xelorr/php-apache-mysqli
         ports:
         - containerPort: 80
         env:

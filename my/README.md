@@ -19,7 +19,8 @@ minikube kubectl -- get po -A
 minikube start --nodes 3 -p petr-webapp --driver=virtualbox
 
 # building and pushing to dockerhub
-docker build -t php-apache-mysqli -f ./dockerfiles/webapp.docker .
+docker build -t xelorr/php-apache-mysqli -f ./dockerfiles/webapp.docker .
+docker push xelorr/php-apache-mysql
 
 # deploynment
 kubectl apply -f configmap.yaml,secret.yaml,db.yaml,web.yaml
