@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+  labels:
+    app: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: php:7.4-apache
+        ports:
+        - containerPort: 3000
+        env:
+        - name: USER_NAME
+          valueFrom:
+            secretKeyRef:
+              name: maria-secret
+              key: username
+        - name: USER_PWD
+          valueFrom:
+            secretKeyRef:
+              name: maria-secret
+              key: password
+        - name: DB_URL
+          valueFrom:
+            configMapKeyRef:
+              name: maria-config
+              key: maria-url
+        volumeMounts:
+        - name: php-files
+          mountPath: /var/www/html
+      volumes:
+      - name: php-files
+        hostPath:
+          path: ./src
+          type: Directory
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+spec:
+  type: NodePort
+  selector:
+    app: webapp
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 30100
