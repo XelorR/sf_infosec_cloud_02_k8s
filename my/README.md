@@ -10,6 +10,12 @@
 ## Commands to run
 
 ```bash
+# building and pushing to dockerhub
+docker build -t xelorr/php-apache-mysqli -f ./dockerfiles/webapp.docker .
+docker push xelorr/php-apache-mysql
+```
+
+```bash
 # delete if exists
 minikube delete -p petr-webapp
 
@@ -17,10 +23,6 @@ minikube delete -p petr-webapp
 minikube config set driver virtualbox
 minikube kubectl -- get po -A
 minikube start --nodes 3 -p petr-webapp --driver=virtualbox
-
-# building and pushing to dockerhub
-docker build -t xelorr/php-apache-mysqli -f ./dockerfiles/webapp.docker .
-docker push xelorr/php-apache-mysql
 
 # deploynment
 kubectl apply -f configmap.yaml,secret.yaml,db.yaml,web.yaml
