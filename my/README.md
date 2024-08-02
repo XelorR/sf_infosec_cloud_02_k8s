@@ -49,7 +49,8 @@ minikube dashboard -p petr-webapp &!
 ### Building from config files
 
 ```bash
-kubectl apply -f configmap.yaml,secret.yaml,db.yaml,web.yaml
+kubectl apply -f configmap.yaml,secret.yaml,db.yaml
+cat web.yaml | sed "s|\.\/src|$(pwd)/src|" | kubectl apply -f -
 ```
 
 ### Launch webapp
