@@ -17,7 +17,7 @@ docker build -t xelorr/php-apache-mysqli -f ./dockerfiles/webapp.docker .
 docker push xelorr/php-apache-mysql
 ```
 
-### Run cluster
+### Create cluster
 
 ```bash
 # delete if exists
@@ -27,19 +27,29 @@ minikube delete -p petr-webapp
 minikube config set driver docker
 minikube kubectl -- get po -A
 minikube start --nodes 3 -p petr-webapp --driver=docker
+```
 
-# deploynment
+### Prepare cluster and launch dashboard
+
+```bash
+# run if exists
+minikube start -p petr-webapp
+
+# setup 
 minikube config set profile petr-webapp
 alias kubectl="minikube kubectl --"
-kubectl apply -f configmap.yaml,secret.yaml,db.yaml,web.yaml
-# or:
-# minikube cache add <local image name>
 
 # addons for dashboard
 minikube -p petr-webapp addons enable metrics-server
 
 # dashboard
 minikube dashboard -p petr-webapp &!
+```
+
+### Building from config files
+
+```bash
+kubectl apply -f configmap.yaml,secret.yaml,db.yaml,web.yaml
 ```
 
 ### Launch webapp
