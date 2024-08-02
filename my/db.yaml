@@ -32,6 +32,15 @@ spec:
             secretKeyRef:
               name: maria-secret
               key: password
+        volumeMounts:
+        - name: init-volume
+          mountPath: /data/application/init.sql
+      volumes:
+      - name: init-volume
+        hostPath:
+          path: ./init.sql
+          type: File
+
 ---
 
 apiVersion: v1
