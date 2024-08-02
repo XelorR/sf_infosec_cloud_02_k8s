@@ -18,7 +18,7 @@ spec:
       - name: webapp
         image: php:7.4-apache
         ports:
-        - containerPort: 3000
+        - containerPort: 80
         env:
         - name: USER_NAME
           valueFrom:
@@ -56,6 +56,6 @@ spec:
     app: webapp
   ports:
     - protocol: TCP
-      port: 3000
-      targetPort: 3000
-      nodePort: 30100
+      port: 80
+      targetPort: 80
+      nodePort: 8880
