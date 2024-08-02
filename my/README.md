@@ -9,11 +9,15 @@
 
 ## Commands to run
 
+### Create container
+
 ```bash
 # building and pushing to dockerhub
 docker build -t xelorr/php-apache-mysqli -f ./dockerfiles/webapp.docker .
 docker push xelorr/php-apache-mysql
 ```
+
+### Run cluster
 
 ```bash
 # delete if exists
@@ -34,7 +38,11 @@ minikube -p petr-webapp addons enable metrics-server
 
 # dashboard
 minikube dashboard -p petr-webapp &!
+```
 
+### Launch webapp
+
+```bash
 # setting default profile & making alias
 minikube config set profile petr-webapp
 alias kubectl="minikube kubectl --"
