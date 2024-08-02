@@ -19,22 +19,6 @@ spec:
         image: xelorr/php-apache-mysqli
         ports:
         - containerPort: 80
-        env:
-        - name: USER_NAME
-          valueFrom:
-            secretKeyRef:
-              name: maria-secret
-              key: username
-        - name: USER_PWD
-          valueFrom:
-            secretKeyRef:
-              name: maria-secret
-              key: password
-        - name: DB_URL
-          valueFrom:
-            configMapKeyRef:
-              name: maria-config
-              key: maria-url
         volumeMounts:
         - name: php-files
           mountPath: /var/www/html
