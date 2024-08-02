@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS mydb;
-CREATE USER IF NOT EXISTS 'user' @'%' IDENTIFIED BY 'password';
+/* CREATE USER IF NOT EXISTS 'user' @'%' IDENTIFIED BY 'password'; */
 GRANT SELECT,
   UPDATE,
   INSERT ON mydb.* TO 'user' @'%';
