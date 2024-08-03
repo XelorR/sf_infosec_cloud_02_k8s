@@ -6,6 +6,8 @@
 - [ ] network, how should I specify database server in my php file?
 - [x] database initialization -- is /data/application/init.sql initialized on start?
 - [ ] database not initiated, ensure running `mysqld --init-file /data/application/init.sql` on setup, mydb not available
+- [ ] check if src folder mounted to webapp
+- [ ] check if init.sql mounted to maria
 
 ## Files
 
