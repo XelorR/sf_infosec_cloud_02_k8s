@@ -4,7 +4,8 @@
 
 - [ ] Apache - access forbidden
 - [ ] network, how should I specify database server in my php file?
-- [ ] database initialization -- is /data/application/init.sql initialized on start?
+- [x] database initialization -- is /data/application/init.sql initialized on start?
+- [ ] database not initiated, ensure running `mysqld --init-file /data/application/init.sql` on setup, mydb not available
 
 ## Files
 
