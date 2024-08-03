@@ -26,7 +26,6 @@ spec:
       - name: php-files
         hostPath:
           path: ./src
-          type: Directory
 
 ---
 

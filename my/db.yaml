@@ -42,7 +42,6 @@ spec:
       - name: init-volume
         hostPath:
           path: ./init.sql
-          type: File
 
 ---
 
