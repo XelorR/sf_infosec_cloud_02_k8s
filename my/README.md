@@ -1,6 +1,12 @@
 # My cluster setup
 
-## The files
+## Current issues and questions to deal with
+
+- [ ] Apache - access forbidden
+- [ ] network, how should I specify database server in my php file?
+- [ ] database initialization -- is /data/application/init.sql initialized on start?
+
+## Files
 
 1. [configmap](./configmap.yaml)
 2. [secret](./secret.yaml)
