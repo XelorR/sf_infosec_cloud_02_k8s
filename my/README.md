@@ -69,6 +69,22 @@ cat db.yaml | sed "s|\.\/init.sql|$(pwd)/init.sql|" | kubectl apply -f -
 minikube service webapp-service
 ```
 
+### Get into the pod to inspect
+
+```bash
+kubectl get pods
+# NAME                                 READY   STATUS    RESTARTS   AGE
+# maria-deployment-78dcb9ccdf-vr67d    1/1     Running   0          33m
+# webapp-deployment-66b9bcf44b-swgr5   1/1     Running   0          33m
+kubectl exec maria-deployment-78dcb9ccdf-vr67d -it -- /bin/bash
+```
+
+### Stop cluster
+
+```bash
+minikube stop -p petr-webapp
+```
+
 ## Screenshots
 
 ![](./dashboard.png)
