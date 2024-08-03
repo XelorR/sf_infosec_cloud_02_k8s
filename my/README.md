@@ -59,7 +59,8 @@ cat db.yaml | sed "s|\.\/init.sql|$(pwd)/init.sql|" | kubectl apply -f -
 ```bash
 # exposing service
 # kubectl expose deployment/<deployment name> --type="NodePort" --port 8080 --cluster <cluster name>
-kubectl expose deployment/webapp-deployment --type="NodePort" --port 8880 --cluster petr-webapp
+# kubectl expose deployment/webapp-deployment --type="NodePort" --port 8880 --cluster petr-webapp
+minikube service webapp-service
 ```
 
 ## Screenshots
