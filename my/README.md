@@ -61,3 +61,7 @@ cat db.yaml | sed "s|\.\/init.sql|$(pwd)/init.sql|" | kubectl apply -f -
 # kubectl expose deployment/<deployment name> --type="NodePort" --port 8080 --cluster <cluster name>
 kubectl expose deployment/petr-webapp-02 --type="NodePort" --port 8880 --cluster petr-webapp
 ```
+
+## Screenshots
+
+![](./dashboard.png)
