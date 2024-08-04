@@ -7,7 +7,8 @@
 - [x] database initialization -- is /data/application/init.sql initialized on start?
 - [ ] database not initiated, ensure running `mysqld --init-file /data/application/init.sql` on setup, mydb not available
 - [ ] check if src folder mounted to webapp
-- [ ] check if init.sql mounted to maria
+- [x] check if init.sql mounted to maria (as folder... fixed)
+- [ ] `/data/application` is empty... why?
 
 ## Files
 
@@ -60,7 +61,7 @@ minikube dashboard -p petr-webapp &!
 ```bash
 kubectl apply -f configmap.yaml,secret.yaml
 cat web.yaml | sed "s|\.\/src|$(pwd)/src|" | kubectl apply -f -
-cat db.yaml | sed "s|\.\/init.sql|$(pwd)/init.sql|" | kubectl apply -f -
+cat db.yaml | sed "s|\.\/db-init|$(pwd)/db-init|" | kubectl apply -f -
 ```
 
 ### Launch webapp

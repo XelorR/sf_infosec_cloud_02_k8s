@@ -37,11 +37,11 @@ spec:
               key: password
         volumeMounts:
         - name: init-volume
-          mountPath: /data/application/init.sql
+          mountPath: /data/application
       volumes:
       - name: init-volume
         hostPath:
-          path: ./init.sql
+          path: ./db-init
 
 ---
 
