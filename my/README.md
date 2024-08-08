@@ -27,49 +27,29 @@ docker build -t xelorr/php-apache-mysqli -f ./dockerfiles/webapp.docker .
 docker push xelorr/php-apache-mysql
 ```
 
-### Create cluster
-
 ```bash
 # delete if exists
-minikube delete -p petr-webapp
+minikube delete -p petr-polyakov-kuber-sf
 
 # create
 minikube config set driver docker
 minikube kubectl -- get po -A
-minikube start --nodes 3 -p petr-webapp --driver=docker
-```
+minikube start --nodes 3 -p petr-polyakov-kuber-sf --driver=docker
 
-### Prepare cluster and launch dashboard
-
-```bash
-# run if exists
-minikube start -p petr-webapp
-
-# setup 
-minikube config set profile petr-webapp
+# setting default and alias
+minikube config set profile petr-polyakov-kuber-sf
 alias kubectl="minikube kubectl --"
 
-# addons for dashboard
-minikube -p petr-webapp addons enable metrics-server
-
-# dashboard
-minikube dashboard -p petr-webapp &!
-```
-
-### Building from config files
-
-```bash
+# adding objects from config
 kubectl apply -f configmap.yaml,secret.yaml
 cat web.yaml | sed "s|\.\/src|$(pwd)/src|" | kubectl apply -f -
 cat db.yaml | sed "s|\.\/db-init|$(pwd)/db-init|" | kubectl apply -f -
-```
 
-### Launch webapp
+# dashboard
+minikube -p petr-polyakov-kuber-sf addons enable metrics-server
+minikube dashboard -p petr-polyakov-kuber-sf &!
 
-```bash
-# exposing service
-# kubectl expose deployment/<deployment name> --type="NodePort" --port 8080 --cluster <cluster name>
-# kubectl expose deployment/webapp-deployment --type="NodePort" --port 8880 --cluster petr-webapp
+# exlosing service
 minikube service webapp-service
 ```
 
@@ -86,7 +66,7 @@ kubectl exec maria-deployment-78dcb9ccdf-vr67d -it -- /bin/bash
 ### Stop cluster
 
 ```bash
-minikube stop -p petr-webapp
+minikube stop -p petr-polyakov-kuber-sf
 ```
 
 ## Screenshots
