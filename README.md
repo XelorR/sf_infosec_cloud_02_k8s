@@ -5,6 +5,7 @@ Homework for SF/MIFI infosec courses
 Здесь два рабочих премера:
 
 - [предоставленный на курсе](./sf_example) (запускал чтобы понять как оно запускается)
+- [мой ремейк примера задания вэиз курса](https://github.com/XelorR/sf_infosec_cloud-kubenretes-bare-minimum)
 - [мой кластер](./my), согласно заданию
 
 ## The task
