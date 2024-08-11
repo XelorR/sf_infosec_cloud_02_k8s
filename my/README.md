@@ -42,8 +42,8 @@ minikube config set profile petr-polyakov-kuber-sf
 alias kubectl="minikube kubectl --"
 
 # mounts
-minikube mount ./src/:/var/www/html &!
-minikube mount ./db-init:/data/application &!
+minikube mount $(pwd)/src/:/var/www/html &!
+minikube mount $(pwd)/db-init:/data/application &!
 
 # adding objects from config
 kubectl apply -f configmap.yaml,secret.yaml,web.yaml,db.yaml
