@@ -20,8 +20,8 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-        - name: php-files
-          mountPath: /var/www/html
+        - mountPath: /var/www/html
+          name: php-files
       volumes:
       - name: php-files
         hostPath:

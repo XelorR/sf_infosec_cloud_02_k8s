@@ -36,8 +36,8 @@ spec:
               name: maria-secret
               key: password
         volumeMounts:
-        - name: init-volume
-          mountPath: /data/application
+        - mountPath: /data/application
+          name: init-volume
       volumes:
       - name: init-volume
         hostPath:
