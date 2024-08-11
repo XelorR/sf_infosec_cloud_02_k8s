@@ -49,8 +49,11 @@ cat db.yaml | sed "s|\.\/db-init|$(pwd)/db-init|" | kubectl apply -f -
 minikube -p petr-polyakov-kuber-sf addons enable metrics-server
 minikube dashboard -p petr-polyakov-kuber-sf &!
 
-# exlosing service
+# exposing service
 minikube service webapp-service
+
+# invintory
+kubectl get all -o wide
 ```
 
 ### Get into the pod to inspect
