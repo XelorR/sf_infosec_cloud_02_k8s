@@ -7,9 +7,9 @@ minikube delete -p petr-polyakov-kuber-sf
 minikube config set rootless true
 
 # create
-minikube config set driver podman
+minikube config set driver docker
 minikube kubectl -- get po -A
-minikube start --nodes 3 -p petr-polyakov-kuber-sf --driver=podman --container-runtime=containerd --mount-string="$(pwd)/src:/var/www/html" --mount-string="$(pwd)/db-init:/data/application"
+minikube start --nodes 3 -p petr-polyakov-kuber-sf --driver=docker --mount-string="$(pwd)/src:/var/www/html" --mount-string="$(pwd)/db-init:/data/application"
 
 # setting default and alias
 minikube config set profile petr-polyakov-kuber-sf
