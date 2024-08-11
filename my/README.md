@@ -35,9 +35,11 @@ docker push xelorr/php-apache-mysql
 minikube -p petr-polyakov-kuber-sf addons enable metrics-server
 minikube dashboard -p petr-polyakov-kuber-sf &!
 
-# exposing service
+# opening exposed service
 minikube service webapp-service
+```
 
+```bash
 # invintory
 kubectl get all -o wide
 ```
@@ -45,13 +47,6 @@ kubectl get all -o wide
 ### Get into the pod to inspect
 
 ```bash
-kubectl get pods
-# NAME                                 READY   STATUS    RESTARTS   AGE
-# maria-deployment-78dcb9ccdf-vr67d    1/1     Running   0          33m
-# webapp-deployment-66b9bcf44b-swgr5   1/1     Running   0          33m
-kubectl exec maria-deployment-78dcb9ccdf-vr67d -it -- /bin/bash
-
-# or
 kubectl exec $(kubectl get pods | grep maria-deployment | cut -d ' ' -f1) -it -- /bin/bash
 kubectl exec $(kubectl get pods | grep webapp-deployment | cut -d ' ' -f1) -it -- /bin/bash
 ```
