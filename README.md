@@ -2,7 +2,7 @@
 
 Homework for SF/MIFI infosec courses
 
-Здесь два рабочих премера:
+Здесь два рабочих премера и после них - ответ на задание:
 
 - [предоставленный на курсе](./sf_example) (запускал чтобы понять как оно запускается)
 - [мой ремейк примера задания вэиз курса](https://github.com/XelorR/sf_infosec_cloud-kubenretes-bare-minimum)
