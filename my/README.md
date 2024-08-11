@@ -41,6 +41,10 @@ minikube start --nodes 3 -p petr-polyakov-kuber-sf --driver=docker
 minikube config set profile petr-polyakov-kuber-sf
 alias kubectl="minikube kubectl --"
 
+# mounts
+minikube mount ./src/:/var/www/html &!
+minikube mount ./db-init:/data/application &!
+
 # adding objects from config
 kubectl apply -f configmap.yaml,secret.yaml
 cat web.yaml | sed "s|\.\/src|$(pwd)/src|" | kubectl apply -f -
