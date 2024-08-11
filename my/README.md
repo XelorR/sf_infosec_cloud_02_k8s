@@ -2,13 +2,14 @@
 
 ## Current issues and questions to deal with
 
-- [ ] Apache - access forbidden
+- [ ] Apache - access forbidden... why?
 - [ ] network, how should I specify database server in my php file?
 - [x] database initialization -- is /data/application/init.sql initialized on start?
 - [ ] database not initiated, ensure running `mysqld --init-file /data/application/init.sql` on setup, mydb not available
-- [ ] check if src folder mounted to webapp
+- [x] check if src folder mounted to webapp (mounted but empty)
 - [x] check if init.sql mounted to maria (as folder... fixed)
 - [ ] `/data/application` is empty... why?
+- [ ] `/var/www/html` is empty... why?
 
 ## Files
 
