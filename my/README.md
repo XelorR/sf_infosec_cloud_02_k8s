@@ -46,9 +46,9 @@ minikube mount ./src/:/var/www/html &!
 minikube mount ./db-init:/data/application &!
 
 # adding objects from config
-kubectl apply -f configmap.yaml,secret.yaml
-cat web.yaml | sed "s|\.\/src|$(pwd)/src|" | kubectl apply -f -
-cat db.yaml | sed "s|\.\/db-init|$(pwd)/db-init|" | kubectl apply -f -
+kubectl apply -f configmap.yaml,secret.yaml,web.yaml,db.yaml
+# cat web.yaml | sed "s|\.\/src|$(pwd)/src|" | kubectl apply -f -
+# cat db.yaml | sed "s|\.\/db-init|$(pwd)/db-init|" | kubectl apply -f -
 
 # dashboard
 minikube -p petr-polyakov-kuber-sf addons enable metrics-server

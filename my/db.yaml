@@ -41,7 +41,7 @@ spec:
       volumes:
       - name: init-volume
         hostPath:
-          path: ./db-init
+          path: /data/application
 
 ---
 
