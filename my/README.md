@@ -69,6 +69,10 @@ kubectl get pods
 # maria-deployment-78dcb9ccdf-vr67d    1/1     Running   0          33m
 # webapp-deployment-66b9bcf44b-swgr5   1/1     Running   0          33m
 kubectl exec maria-deployment-78dcb9ccdf-vr67d -it -- /bin/bash
+
+# or
+kubectl exec $(kubectl get pods | grep maria-deployment | cut -d ' ' -f1) -it -- /bin/bash
+kubectl exec $(kubectl get pods | grep webapp-deployment | cut -d ' ' -f1) -it -- /bin/bash
 ```
 
 ### Stop cluster
