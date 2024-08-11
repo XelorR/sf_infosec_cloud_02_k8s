@@ -47,8 +47,8 @@ kubectl get all -o wide
 ### Get into the pod to inspect
 
 ```bash
-kubectl exec $(kubectl get pods | grep maria-deployment | cut -d ' ' -f1) -it -- /bin/bash
-kubectl exec $(kubectl get pods | grep webapp-deployment | cut -d ' ' -f1) -it -- /bin/bash
+./get-into-pod.sh maria-deployment
+./get-into-pod.sh webapp-deployment
 ```
 
 ### Stop cluster
