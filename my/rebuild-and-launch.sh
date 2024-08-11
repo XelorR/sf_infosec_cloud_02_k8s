@@ -4,7 +4,8 @@
 minikube delete -p petr-polyakov-kuber-sf
 
 # needed for podman
-minikube config set rootless true
+minikube config set rootless false
+# docker context use rootless
 
 # create
 minikube config set driver docker
@@ -17,6 +18,7 @@ minikube config set profile petr-polyakov-kuber-sf
 
 # mounts
 minikube mount $(pwd)/src:/var/www/html &!
+
 minikube mount $(pwd)/db-init:/data/application &!
 
 # adding objects from config
