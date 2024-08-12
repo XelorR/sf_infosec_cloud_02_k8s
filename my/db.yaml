@@ -14,9 +14,14 @@ spec:
       labels:
         app: maria
     spec:
+      volumes:
+      - name: init-volume
+        hostPath:
+          path: /data/application
+          type: DirectoryOrCreate
       containers:
-      - name: mariadb
-        image: mariadb:10.4
+      - image: mariadb:10.4
+        name: mariadb
         ports:
         - containerPort: 3306
         env:
@@ -38,10 +43,6 @@ spec:
         volumeMounts:
         - mountPath: /data/application
           name: init-volume
-      volumes:
-      - name: init-volume
-        hostPath:
-          path: /data/application
 
 ---
 

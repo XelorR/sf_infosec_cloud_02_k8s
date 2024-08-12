@@ -14,18 +14,19 @@ spec:
       labels:
         app: webapp
     spec:
+      volumes:
+      - name: php-files
+        hostPath:
+          path: /var/www/html
+          type: DirectoryOrCreate
       containers:
-      - name: webapp
-        image: xelorr/php-apache-mysqli
+      - image: xelorr/php-apache-mysqli
+        name: webapp
         ports:
         - containerPort: 80
         volumeMounts:
         - mountPath: /var/www/html
           name: php-files
-      volumes:
-      - name: php-files
-        hostPath:
-          path: /var/www/html
 
 ---
 
