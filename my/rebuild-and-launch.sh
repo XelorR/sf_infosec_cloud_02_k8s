@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # delete if exists
 minikube delete -p petr-polyakov-kuber-sf
@@ -15,6 +15,9 @@ minikube start --nodes 3 -p petr-polyakov-kuber-sf --driver=docker # --mount-str
 # setting default and alias
 minikube config set profile petr-polyakov-kuber-sf
 # alias kubectl="minikube kubectl --"
+
+# to try, method 2:
+#  https://thospfuller.com/2020/12/09/learn-how-to-mount-a-local-drive-in-a-pod-in-minikube-2021/
 
 # mounts
 minikube mount $(pwd)/src:/var/www/html &!
