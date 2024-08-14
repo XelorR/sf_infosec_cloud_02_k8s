@@ -15,10 +15,6 @@ spec:
         app: maria
     spec:
       volumes:
-      - name: init-volume
-        hostPath:
-          path: /data/application
-          type: DirectoryOrCreate
       - name: maria-initdb
         configMap:
           name: maria-init
@@ -44,10 +40,8 @@ spec:
               name: maria-secret
               key: password
         volumeMounts:
-        - mountPath: /data/application
-          name: init-volume
-        - mountPath: /docker-entrypoint-initdb.d
-          name: maria-initdb
+        - name: maria-initdb
+          mountPath: /docker-entrypoint-initdb.d
 ---
 
 apiVersion: v1

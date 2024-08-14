@@ -53,8 +53,4 @@ data:
       );
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2024-08-14T13:17:44Z"
   name: maria-init
-  namespace: default
-  resourceVersion: "7536"
-  uid: f6152b16-5c32-4d81-9a8a-435e0c15a2a4
