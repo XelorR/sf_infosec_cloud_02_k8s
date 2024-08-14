@@ -101,10 +101,12 @@ replicaset.apps/webapp-deployment-5448c48d7c   1         1         1       17m  
 
 ## Inventory table
 
-|                    | webapp-deployment | maria-deployment |
-| ------------------ | ----------------- | ---------------- |
-| software installed |                   |                  |
-| node count         |                   |                  |
-| operating system   |                   |                  |
-| ip address         |                   |                  |
-| comment            |                   |                  |
+|                    | webapp-deployment                        | maria-deployment                 |
+| ------------------ | ---------------------------------------- | -------------------------------- |
+| software installed | php 7.4, apache 2.4.54, mysqli php addon | mariadb 10.4                     |
+| node count         | 1                                        | 1                                |
+| operating system   | Debian GNU/Linux 11 (bullseye)           | Ubuntu 20.04.6 LTS (Focal Fossa) |
+| pod address        | 10.244.1.2                               | 10.244.1.3                       |
+| service address    | 10.98.104.116                            | 10.111.3.248                     |
+| port exposed       | 80                                       | 3306                             |
+| purpose            | webapp                                   | database                         |
