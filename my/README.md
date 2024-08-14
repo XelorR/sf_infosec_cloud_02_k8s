@@ -11,7 +11,7 @@
 - [x] `/var/www/html` is empty... why? (known issue, unable to fix quickly)
 - [x] what if I copy required files? How can I download config automatickly? (php works if i expose server)
 - [x] which object from my configs can be threated as ip? Which name should i ping to confirm one pode avaliability from another? (service name, but it is not pingable)
-- [ ] read about kubernetes network fundamentals
+- [x] read about kubernetes network fundamentals
 - [x] database not initiated, ensure running `mysqld --init-file /data/application/init.sql` on setup, mydb not available or try workaround: https://stackoverflow.com/questions/45681780/how-to-initialize-mysql-container-when-created-on-kubernetes#45682775
 - [x] repeat workaround for webapp, replacing hostmount with configmap, generated from php file
 
