@@ -73,3 +73,5 @@ minikube stop -p petr-polyakov-kuber-sf
 ## Screenshots
 
 ![](./dashboard.png)
+
+![](./webapp-running.png)
