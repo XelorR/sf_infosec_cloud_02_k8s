@@ -25,4 +25,4 @@ minikube mount $(pwd)/src:/var/www/html &!
 minikube mount $(pwd)/db-init:/data/application &!
 
 # adding objects from config
-minikube kubectl -- apply -f configmap.yaml,secret.yaml,web.yaml,db.yaml,maria-init-configmap.yaml
+minikube kubectl -- apply -f configmap.yaml,secret.yaml,web.yaml,db.yaml,maria-init-configmap.yaml,php-app-configmap.yaml

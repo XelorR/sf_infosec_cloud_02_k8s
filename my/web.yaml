@@ -16,9 +16,8 @@ spec:
     spec:
       volumes:
       - name: php-files
-        hostPath:
-          path: /var/www/html
-          type: DirectoryOrCreate
+        configMap:
+          name: php-app
       containers:
       - image: xelorr/php-apache-mysqli
         name: webapp
