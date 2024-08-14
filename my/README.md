@@ -32,6 +32,12 @@ docker push xelorr/php-apache-mysql
 ```
 
 ```bash
+# creating configmap from file
+minikube kubectl -- create configmap maria-init --from-file=db-init/init.sql
+minikube kubectl -- get configmaps maria-init -o yaml > maria-init-configmap.yaml
+```
+
+```bash
 ./rebuild-and-launch.sh
 
 # dashboard
