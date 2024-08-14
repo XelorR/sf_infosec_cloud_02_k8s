@@ -17,10 +17,12 @@
 
 ## Files
 
-1. [configmap](./configmap.yaml)
-2. [secret](./secret.yaml)
-3. [db](./db.yaml)
-4. [web](./web.yaml)
+- [configmap](./configmap.yaml)
+- [secret](./secret.yaml)
+- [web](./web.yaml) - webapp deployment and service
+- [db](./db.yaml) - database deployment and service
+- [maria-init-configmap](./maria-init-configmap.yaml)
+- [php-app-configmap](./php-app-configmap.yaml)
 
 ## Commands to run
 
