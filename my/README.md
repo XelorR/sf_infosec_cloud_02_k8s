@@ -100,3 +100,11 @@ replicaset.apps/webapp-deployment-5448c48d7c   1         1         1       17m  
 ```
 
 ## Inventory table
+
+|                    | webapp-deployment | maria-deployment |
+| ------------------ | ----------------- | ---------------- |
+| software installed |                   |                  |
+| node count         |                   |                  |
+| operating system   |                   |                  |
+| ip address         |                   |                  |
+| comment            |                   |                  |
