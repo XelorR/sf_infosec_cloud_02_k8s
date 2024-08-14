@@ -10,6 +10,7 @@
 - [x] `/data/application` is empty... why? (known issue, unable to fix quickly)
 - [x] `/var/www/html` is empty... why? (known issue, unable to fix quickly)
 - [ ] what if I copy frequired files? How can I download config automatickly?
+- [ ] wh8ch object from my configs can be threated as ip? Which name should i ping to confirm one pode avaliability from another?
 - [ ] database not initiated, ensure running `mysqld --init-file /data/application/init.sql` on setup, mydb not available
 
 ## Files
