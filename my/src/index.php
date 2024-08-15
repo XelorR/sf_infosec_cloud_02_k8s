@@ -15,7 +15,9 @@
         <th>population</th>
       </tr>
       <?php
-      $mysqli = new mysqli("maria-service", "user", "password", "mydb");
+      $user = getenv('USERNAME');
+      $pw = getenv('PASSWORD');
+      $mysqli = new mysqli("maria-service", $user, $pw, "mydb");
       if ($mysqli->ping()) {
         echo "Our connection is ok!";
       } else {

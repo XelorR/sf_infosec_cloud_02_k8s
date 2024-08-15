@@ -26,6 +26,17 @@ spec:
         volumeMounts:
         - mountPath: /var/www/html
           name: php-files
+        env:
+        - name: USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: username
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: password
 
 ---
 
